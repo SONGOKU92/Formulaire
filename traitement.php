@@ -63,7 +63,7 @@ try {
     $mail->Host       = 'smtp.example.com';  // Remplacer example par votre service de messagerie                    
     $mail->SMTPAuth   = true;                                   
     $mail->Username   = 'example@gmail.com';  // Votre email                
-    $mail->Password   = 'Secret';            // Votre mot de passe SMTP
+    $mail->Password   = 'Secret';            // Votre mot de passe des applications SMTP
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
     $mail->Port       = 465;                                   
 
