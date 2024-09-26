@@ -2,7 +2,7 @@
 
 Ce projet est un exemple de formulaire PHP permettant de collecter des informations (nom, email, message) via une méthode POST, puis de les insérer dans une base de données MySQL et d'envoyer un e-mail avec PHPMailer.
 
-✨**Fonctionnalités** 
+✨ **Fonctionnalités** 
 
 - Enregistrement dans une base de données MySQL : Les informations envoyées via le formulaire sont stockées dans une table MySQL.
 
@@ -10,7 +10,7 @@ Ce projet est un exemple de formulaire PHP permettant de collecter des informati
 
 - Gestion des erreurs : Le code affiche les erreurs SQL et celles liées à l'envoi d'e-mail pour faciliter le débogage.
 
-🔗**Prérequis** 
+🔗 **Prérequis** 
 
 - [Visual Studio Code](https://code.visualstudio.com/) : Visual Studio Code est un éditeur de code extensible.
 
@@ -20,7 +20,7 @@ Ce projet est un exemple de formulaire PHP permettant de collecter des informati
 
 - [PHPMailer](https://github.com/PHPMailer/PHPMailer/) installé dans votre projet pour la gestion des e-mails.
 
-💻**OS**
+💻 **OS**
 
 - Linux ✔️
 - Windows ✔️
