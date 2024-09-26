@@ -14,7 +14,7 @@ Ce projet est un exemple de formulaire PHP permettant de collecter des informati
 
 - [Visual Studio Code](https://code.visualstudio.com/) : Visual Studio Code est un éditeur de code extensible.
 
-- [XAMPP](https://www.apachefriends.org/fr/index.html) : XAMPP est un ensemble de logiciels permettant de mettre en place un serveur Web local, un serveur FTP et un serveur de messagerie électronique.
+- [XAMPP](https://www.apachefriends.org/fr/index.html) : XAMPP est un ensemble de logiciels permettant de mettre en place un serveur Web local, un serveur FTP et un serveur de messagerie électronique. Développé par Apache Friends.
 
 - Serveur Apache et MySQL avec base de données configurée.
 
