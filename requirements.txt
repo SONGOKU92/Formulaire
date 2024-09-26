@@ -1,3 +1,0 @@
-https://github.com/PHPMailer/PHPMailer
-
-Download ZIP and copy it into your project
