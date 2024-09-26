@@ -18,7 +18,7 @@ Ce projet est un exemple de formulaire PHP permettant de collecter des informati
 
 - Serveur Apache et MySQL avec base de données configurée.
 
-- [PHPMailer](https://github.com/PHPMailer/PHPMailer/) installé pour la gestion des e-mails.
+- [PHPMailer](https://github.com/PHPMailer/PHPMailer/) installé dans votre projet pour la gestion des e-mails.
 
 💻**OS**
 
