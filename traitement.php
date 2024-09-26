@@ -1,12 +1,51 @@
 <?php
+ini_set('display_errors', 1); 
+error_reporting(E_ALL);
 
-$nom = $_POST['name'];
-$email = $_POST['email'];
-$message = $_POST['message'];
+$servername = "localhost";
+$username = "";  // Votre nom d'utilisateur 
+$password = "";  // Votre mdp
+$dbname = "";  // Nom de votre base de donnée
 
-$message = "Nom : " . $nom . "\n" . "Email : " . $email . "\n" . "Message : " . $message;
+// Connexion 
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-//Importer PHPMailer
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} else {
+    echo "Connexion à la base de donnée réussie.<br>";
+}
+
+if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['message'])) {
+    $nom = $_POST['name'];
+    $email = $_POST['email'];
+    $message = $_POST['message'];
+
+    // Affichage des valeurs
+    echo "Nom: $nom, Email: $email, Message: $message<br>";
+
+    
+    $stmt = $conn->prepare("INSERT INTO tables (nom, email, message) VALUES (?, ?, ?)");  // Remplacer tables par le nom de votre table
+
+    if (!$stmt) {
+        die("Erreur de préparation: " . $conn->error);
+    }
+
+    $stmt->bind_param("sss", $nom, $email, $message);
+
+    
+    if ($stmt->execute()) {
+        echo "Message enregistré avec succès.<br>";
+    } else {
+        echo "Erreur lors de l'insertion: " . $stmt->error . "<br>";
+    }
+
+    $stmt->close(); // Fermeture de la requete preparée
+} else {
+    echo "Données manquantes.<br>";
+}
+
+//Importation de PHPMailer
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
@@ -16,25 +55,22 @@ require 'PHPMailer/src/Exception.php';
 require 'PHPMailer/src/PHPMailer.php';
 require 'PHPMailer/src/SMTP.php';
 
-
 $mail = new PHPMailer(true);
 
 try {
-    //Parametre du serveur
- 
+    // Paramètres du serveur SMTP
     $mail->isSMTP();                                            
-    $mail->Host       = 'smtp.example.com';  // Votre service de messagerie                    
+    $mail->Host       = 'smtp.example.com';  // Remplacer example par votre service de messagerie                    
     $mail->SMTPAuth   = true;                                   
-    $mail->Username   = 'example@gmail.com';                     
-    $mail->Password   = 'Secret';                         //mot de passe SMTP
+    $mail->Username   = 'example@gmail.com';  // Votre email                
+    $mail->Password   = 'Secret';            // Votre mot de passe SMTP
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
     $mail->Port       = 465;                                   
 
-    
-    $mail->setFrom('from@example.com', 'Objet');
-    $mail->addAddress('joe@example.net');     //Exemple reception
+    // Configuration de l'e-mail
+    $mail->setFrom('from@example.com', 'tuto'); // Email d'envoi
+    $mail->addAddress('johndoe@gmail.com');     // Email destinataire
 
-    
     $mail->isHTML(true);                                  
     $mail->Subject = 'Here is the subject';
     $mail->Body    = $message;
@@ -45,3 +81,6 @@ try {
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
+
+$conn->close(); // Fermeture de la connexion à la base de données
+?>
