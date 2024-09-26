@@ -68,7 +68,7 @@ try {
     $mail->Port       = 465;                                   
 
     // Configuration de l'e-mail
-    $mail->setFrom('from@example.com', 'tuto'); // Email d'envoi
+    $mail->setFrom('from@example.com', 'tuto'); // Email d'envoi et objet du message
     $mail->addAddress('johndoe@gmail.com');     // Email destinataire
 
     $mail->isHTML(true);                                  
