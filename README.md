@@ -8,7 +8,7 @@ Ce projet est un exemple de formulaire PHP permettant de collecter des informati
 
 - Envoi d'un e-mail avec PHPMailer : Un e-mail est envoyé au destinataire après la soumission du formulaire.
 
-- Gestion des erreurs : Le code affiche les erreurs SQL et celles liées à l'envoi d'e-mail pour faciliter le débogage.
+- Gestion des erreurs : Le code affiche les erreurs SQL et celles liées à l'envoi d'e-mail.
 
 🔗 **Prérequis** 
 
