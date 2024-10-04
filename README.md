@@ -1,4 +1,4 @@
-📧 **Envoi d'E-mail via un formulaire PHP/MySQL**
+# 📧 Envoi d'E-mail via un formulaire PHP/MySQL
 
 Ce projet est un exemple de formulaire PHP permettant de collecter des informations (nom, email, message) via une méthode POST, puis de les insérer dans une base de données MySQL et d'envoyer un e-mail avec PHPMailer.
 
